@@ -9,6 +9,15 @@
 ## * (at your option) any later version.
 ##*/
 
+
+
+## Usage: python wavtotext.py  your_sound_file_here
+## Full Install Instructions: 
+## 1) Get virtualenv
+## 2) Start a virtual environment in the root folder of the repo using "virtualenv venv"
+## 3) Activate the virtual environment with "activate venv/bin/activate"
+## 4) Install pydub via "pip install pydub"
+## 5) Run the python script via the command above at "Usage:"
 import os
 import sys
 import wave
@@ -24,20 +33,18 @@ def main():
 
     fileName = sys.argv[1] #file to be imported
 
-    print fileName[-4:]
-    print fileName[:-4]
     if fileName[-4:] == ".mp3": #convert mp3 files
 
     	#current strategy is to re-save the file as .wav
     	#change the file name, and proceede as normal
     	#should probably make this less jank in the future
     	path = os.getcwd()
-    	sound = AudioSegment.from_mp3(path + "\\" + fileName)
-    	sound.export(path + "\\" + fileName[:-4] + ".wav", format="wav")
-    	fileName = fileName[:-4] + ".wav" #once 
+    	sound = AudioSegment.from_mp3(path + "/" + fileName)
+    	sound.export(path + "/" + fileName[:-4] + ".wav", format="wav")
+    	full_filename = fileName[:-4] + ".wav" #once 
 
 	#read file and get data
-	w = wave.open(fileName, 'r')
+	w = wave.open(full_filename, 'r')
 	numframes = w.getnframes()
 
 	frame = w.readframes(numframes)#w.getnframes()
@@ -60,8 +67,8 @@ def main():
 	    audioStr += str(frameOneChannel[i])
 	    audioStr += ","#separate elements with comma
 
-	fileName = fileName[:-3]#remove .wav extension
-	text_file = open(fileName+"txt", "w")
+	split_filename = full_filename[:-3]#remove .wav extension
+	text_file = open(split_filename+"txt", "w")
 	text_file.write("%s"%audioStr)
 	text_file.close()
 

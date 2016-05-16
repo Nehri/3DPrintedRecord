@@ -59,6 +59,9 @@ void setup(){
   drawGrooves(processAudioData());//draw in grooves
   
   //change extension of file name
+  if (args.length != 0) {
+    filename = args[0];
+  }
   String name = filename;
   int dotPos = filename.lastIndexOf(".");
   if (dotPos > 0)

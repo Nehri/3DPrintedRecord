@@ -1,16 +1,7 @@
-http://www.instructables.com/id/3D-Printed-Record/
-Dec 2012
-by Amanda Ghassaei
+# DIY Record-Making #
+### Using 3D Printers, Laser Cutters, and Rubber Molds ###
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+### By Steven Hernandez, Michelle Ross, and Aaron Schaer ###
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This project ports the 3D Printing Record project by Amanda Ghassaei ([example]:http://www.instructables.com/id/3D-Printed-Record/ "Here") to Python, with permission under the GNU General Public License.  
 
-find up to date instructions for running this code on Instructables:
-http://www.instructables.com/id/3D-Printed-Record/step7/
